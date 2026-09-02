@@ -6,7 +6,16 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import type { GalleryImage } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
 
-export function Gallery({ images, columns = 3 }: { images: GalleryImage[]; columns?: 2 | 3 | 4 }) {
+export function Gallery({
+  images,
+  columns = 3,
+  featured = false,
+}: {
+  images: GalleryImage[]
+  columns?: 2 | 3 | 4
+  /** Erstes Bild großformatig (2×2), die übrigen als Raster daneben */
+  featured?: boolean
+}) {
   const [active, setActive] = useState<number | null>(null)
 
   const close = useCallback(() => setActive(null), [])
@@ -35,35 +44,49 @@ export function Gallery({ images, columns = 3 }: { images: GalleryImage[]; colum
       <ul
         className={cn(
           'grid gap-4',
-          columns === 2 && 'sm:grid-cols-2',
-          columns === 3 && 'sm:grid-cols-2 lg:grid-cols-3',
-          columns === 4 && 'grid-cols-2 lg:grid-cols-4',
+          !featured && columns === 2 && 'sm:grid-cols-2',
+          !featured && columns === 3 && 'sm:grid-cols-2 lg:grid-cols-3',
+          !featured && columns === 4 && 'grid-cols-2 lg:grid-cols-4',
+          featured && 'grid-cols-2 lg:grid-cols-4',
         )}
       >
-        {images.map((img, i) => (
-          <li key={img.src}>
-            <button
-              type="button"
-              onClick={() => setActive(i)}
-              className="group flex w-full flex-col gap-2 text-left focus-visible:outline-none"
-              aria-label={`${img.caption} – Bild vergrößern`}
-            >
-              <span className="relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted ring-offset-background group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2">
-                <Image
-                  src={img.src}
-                  alt={img.caption}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-              </span>
-              <span className="text-sm leading-snug text-muted-foreground">
-                {img.title && <span className="block font-semibold text-foreground">{img.title}</span>}
-                {img.caption}
-              </span>
-            </button>
-          </li>
-        ))}
+        {images.map((img, i) => {
+          const isLead = featured && i === 0
+          return (
+            <li key={img.src} className={cn(isLead && 'col-span-2 row-span-2')}>
+              <button
+                type="button"
+                onClick={() => setActive(i)}
+                className="group flex h-full w-full flex-col gap-2 text-left focus-visible:outline-none"
+                aria-label={`${img.caption} – Bild vergrößern`}
+              >
+                <span
+                  className={cn(
+                    'relative block w-full overflow-hidden bg-muted ring-offset-background group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2',
+                    isLead ? 'flex-1 rounded-[2rem_2rem_2rem_0.75rem] aspect-[4/3] lg:aspect-auto lg:min-h-[420px]' : 'aspect-[4/3] rounded-2xl',
+                  )}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.caption}
+                    fill
+                    sizes={isLead ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw'}
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                  {isLead && (
+                    <span className="absolute bottom-4 left-4 rounded-full bg-background/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-foreground backdrop-blur">
+                      {images.length} Bilder
+                    </span>
+                  )}
+                </span>
+                <span className={cn('leading-snug text-muted-foreground', isLead ? 'text-base' : 'text-sm')}>
+                  {img.title && <span className="block font-semibold text-foreground">{img.title}</span>}
+                  {img.caption}
+                </span>
+              </button>
+            </li>
+          )
+        })}
       </ul>
 
       {active !== null && (

@@ -114,6 +114,42 @@
   .blob-alt {
     border-radius: 42% 58% 48% 52% / 55% 40% 60% 45%;
   }
+  /* Warme Foto-Zuschnitte für Porträts */
+  .cut-arch {
+    border-radius: 999px 999px 1.25rem 1.25rem;
+  }
+  .cut-leaf {
+    border-radius: 1.25rem 55% 1.25rem 55%;
+  }
+  .cut-pebble {
+    border-radius: 45% 55% 50% 50% / 55% 45% 55% 45%;
+  }
+}
+
+/* Dezenter Scroll-Reveal (siehe components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Ruhige Lese-Typografie für Impressum & Datenschutz */
