@@ -13,7 +13,9 @@ export function JobsAndContact() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Stellenangebote</p>
             <h2 className="text-3xl font-semibold sm:text-4xl">Lust, unser Team zu verstärken?</h2>
             <p className="text-lg leading-relaxed text-primary-foreground/85">
-              Wir suchen immer wieder engagierte pädagogische Fachkräfte. Melden Sie sich gern – auch initiativ.
+              Wir suchen immer mal wieder neue Mitarbeiter*innen oder Jahrespraktikant*innen für unser Team. Sollten
+              hier keine passenden Angebote ausgeschrieben sein, freuen wir uns auch über Ihre Initiativbewerbung – gerne
+              auch per Mail. Wir geben jeder Bewerbung eine kurze Rückmeldung.
             </p>
           </div>
           <Link

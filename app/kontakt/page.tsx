@@ -55,7 +55,10 @@ export default function KontaktPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock className="size-5 shrink-0 text-primary" aria-hidden />
-                  <span>Mo – Fr, 7:00 – 16:00 Uhr</span>
+                  <span>
+                    7:00 – 16:00 Uhr (Randzeit bis Ende Ganztagsgruppe){' '}
+                    <span className="font-semibold text-destructive">[[ZU PRÜFEN: Wochentage]]</span>
+                  </span>
                 </li>
               </ul>
             </address>

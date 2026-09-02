@@ -21,8 +21,8 @@ export default function RaumangebotPage() {
     <>
       <PageHero
         eyebrow="Über uns"
-        title="Raum zum Spielen, Lernen und Wohlfühlen"
-        intro="Unsere Kita liegt im Grünen, umgeben von Kirche, Grundschule und Sportplatz. Drinnen wie draußen gibt es viel Platz, um zu bauen, zu toben, zu forschen und zur Ruhe zu kommen."
+        title="Raum zum Spielen, Lernen und Entfalten!"
+        intro="Unsere Einrichtung liegt im Ortskern von Venhaus, neben der Kirche und dem dazugehörigen Burgpark. Diese schöne und zentrale Lage nutzen wir immer mal wieder für Spaziergänge oder „Ausfahrten“ mit unseren vielen Rädern und Tretfahrzeugen."
         image={{ src: '/images/luft-2.jpg', alt: 'Luftaufnahme der Kita St. Vitus Venhaus' }}
       />
 
@@ -30,9 +30,9 @@ export default function RaumangebotPage() {
         <SectionHeading eyebrow="Unser Haus" title="Halle, Turnraum, Spielplätze" />
         <Prose className="mb-10">
           <p>
-            Herzstück unseres Hauses ist die große Halle: Hier treffen sich die Kinder aller Gruppen zum Schaukeln, Spielen,
-            Bilderbücher anschauen und Fische beobachten. Der Turnraum und das Bällebad bieten unendlich viele Möglichkeiten,
-            Bewegung zu fördern. Draußen warten ein eigener Spielplatz für die Krippenkinder und ein großer Kindergarten-Spielplatz.
+            Wann immer es das Wetter auch nur einigermaßen zulässt, gehen wir täglich mit jedem Kind mindestens einmal an
+            die frische Luft, vor allem auf unseren Spielplatz. Hier erhalten Sie viele bunte Eindrücke unserer Räume und
+            Außenanlage. Kommen Sie gerne einmal vorbei, falls Sie Ihr Kind bei uns anmelden möchten.
           </p>
         </Prose>
         <Gallery images={houseGallery} columns={4} />

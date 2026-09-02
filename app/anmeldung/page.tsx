@@ -87,6 +87,7 @@ export default function AnmeldungPage() {
           <span className="flex flex-col gap-0.5">
             <span className="text-lg font-semibold">Aufnahmekriterien 2025/2026</span>
             <span className="text-sm text-muted-foreground">PDF herunterladen</span>
+            <span className="text-xs font-semibold text-destructive">[[ZU PRÜFEN: Gibt es eine aktuellere Fassung?]]</span>
           </span>
         </a>
       </Section>

@@ -9,6 +9,16 @@ export default function DatenschutzPage() {
     <>
       <PageHero eyebrow="Rechtliches" title="Datenschutzerklärung" />
       <Section>
+        <div
+          role="note"
+          className="mb-10 rounded-3xl border-2 border-destructive/40 bg-destructive/5 p-6 text-sm leading-relaxed text-destructive"
+        >
+          <p className="font-bold">
+            [[ZU PRÜFEN: Diese Datenschutzerklärung wurde für die neue Website neu formuliert und NICHT von der
+            Original-Website übernommen. Bitte vor Veröffentlichung rechtlich prüfen bzw. den bestehenden Text der Kita
+            einfügen.]]
+          </p>
+        </div>
         <Prose>
           <h2>1. Datenschutz auf einen Blick</h2>
           <h3>Allgemeine Hinweise</h3>
@@ -38,8 +48,15 @@ export default function DatenschutzPage() {
           </p>
 
           <h2>3. Datenerfassung auf dieser Website</h2>
-          <h3>Cookies</h3>
-          <p>Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken ein.</p>
+          <h3>Cookies und Reichweitenmessung</h3>
+          <p>
+            Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken ein. Zur anonymen, cookielosen Messung der
+            Seitenaufrufe kann Vercel Web Analytics eingesetzt werden; dabei werden keine personenbezogenen Profile
+            gebildet.{' '}
+            <span className="font-semibold text-destructive">
+              [[ZU PRÜFEN: Soll Vercel Analytics aktiv bleiben? Falls nicht, Komponente in app/layout.tsx entfernen.]]
+            </span>
+          </p>
           <h3>Kontaktaufnahme</h3>
           <p>
             Wenn Sie uns per Kontaktformular oder E-Mail kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage

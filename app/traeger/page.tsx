@@ -13,20 +13,11 @@ export default function TraegerPage() {
       <PageHero
         eyebrow="Über uns"
         title="Unser Träger"
-        intro="Träger unserer Kindertagesstätte ist die Katholische Kirchengemeinde St. Vitus Venhaus – Teil der Pfarreiengemeinschaft Spelle."
+        intro="Träger unserer Kindertagesstätte ist die Katholische Kirchengemeinde St. Vitus Venhaus."
       />
       <Section>
         <div className="grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="flex flex-col gap-6 lg:sticky lg:top-28">
-            <div className="rounded-4xl bg-card p-8 ring-1 ring-border">
-              <Image
-                src="/images/traeger.png"
-                alt="Katholische Kirchengemeinde St. Vitus Venhaus"
-                width={600}
-                height={400}
-                className="h-auto w-full object-contain"
-              />
-            </div>
             <blockquote className="rounded-4xl bg-secondary/60 p-8 font-display text-xl leading-snug text-secondary-foreground">
               „Da rief Jesus ein Kind herbei, stellte es in ihre Mitte und sagte: Amen, das sage ich euch: … Wer ein
               solches Kind um meinetwillen aufnimmt, der nimmt mich auf.“
@@ -63,6 +54,18 @@ export default function TraegerPage() {
               wir uns leiten, gern mit Ihnen zusammen.
             </p>
             <p>Für Anfragen oder Anregungen stehen wir gern zur Verfügung.</p>
+            <figure className="not-prose flex flex-col gap-3">
+              <Image
+                src="/images/traeger.png"
+                alt="Fotos und Unterschriften der Vertreter des Trägers"
+                width={800}
+                height={430}
+                className="h-auto w-full max-w-md rounded-2xl bg-card p-4 ring-1 ring-border"
+              />
+              <figcaption className="text-sm font-semibold text-destructive">
+                [[ZU PRÜFEN: Namen und Funktionen der beiden abgebildeten Trägervertreter – auf der Original-Website nicht als Text hinterlegt]]
+              </figcaption>
+            </figure>
             <p>
               <a href="/docs/leitbild.pdf" className="font-semibold text-primary underline-offset-4 hover:underline">
                 Leitbild der Pfarreiengemeinschaft Spelle (PDF)

@@ -42,7 +42,7 @@ export function Hero() {
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Krippe & Kiga</dt>
-              <dd className="font-display text-2xl font-semibold">1–6 J.</dd>
+              <dd className="text-xs font-semibold leading-snug text-destructive">[[ZU PRÜFEN: Altersspanne]]</dd>
             </div>
             <div>
               <dt className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">

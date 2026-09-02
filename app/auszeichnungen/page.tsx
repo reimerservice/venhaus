@@ -14,7 +14,7 @@ export default function AuszeichnungenPage() {
       <PageHero
         eyebrow="Unsere Kita"
         title="Unsere Auszeichnungen"
-        intro="Qualität, die man sehen kann: Zwei Zertifikate und Projekte, die unsere Arbeit seit vielen Jahren prägen."
+        intro="Das Zertifikat „Haus für Kinder und Familien“ des Bistums Osnabrück und das Modellprojekt Brückenjahr mit der Grundschule St. Vitus Venhaus."
       />
 
       <Section>

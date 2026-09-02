@@ -15,7 +15,7 @@ export default function TeamPage() {
       <PageHero
         eyebrow="Über uns"
         title="Unser Team"
-        intro="Erfahrene Erzieherinnen, Krippen- und Sprachförderkräfte, religionspädagogische Fachkräfte und viele helfende Hände: Diese Menschen begleiten Ihr Kind jeden Tag."
+        intro="Unser Team besteht aus 15 pädagogischen Fachkräften und einer Hauswirtschaftskraft. Die Kitaleitung ist freigestellt – dennoch ist es ihr ein wichtiges Anliegen, unterstützend in den Gruppen tätig zu sein. Mit viel Liebe, Geduld und pädagogischem Fachwissen sorgen alle Mitarbeiter dafür, dass sich die Kinder sicher und geborgen fühlen."
       />
 
       <Section>

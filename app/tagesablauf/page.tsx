@@ -50,7 +50,7 @@ const krippeDay: Slot[] = [
     title: 'Gleitendes Frühstück',
     text: 'Auch die Spatzen entscheiden selbst, wann sie frühstücken. An Geburtstagen gibt es ein gemeinsames Frühstück nach dem Morgenkreis.',
   },
-  { time: 'Nach dem Freispiel', title: 'Draußen spielen', text: 'Auf dem eigenen, geschützten Außengelände der Krippe.' },
+  { time: 'Nach dem Freispiel', title: 'Spiel auf dem Außengelände', text: 'Nach der Freispielzeit folgt das Spiel auf dem Außengelände.' },
   { time: '11:30 Uhr', title: 'Mittagessen', text: 'Für die angemeldeten Kinder gibt es Mittagessen.' },
   {
     time: 'Mittag',

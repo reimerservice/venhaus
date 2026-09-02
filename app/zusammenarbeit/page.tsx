@@ -23,7 +23,6 @@ export default function ZusammenarbeitPage() {
         eyebrow="Unsere Kita"
         title="Zusammenarbeit und Kooperation"
         intro="Wir pflegen ein gutes Verhältnis zu allen Eltern – der Elternbeirat vertritt sie als offizielles Gremium. Auch mit Träger und Grundschule arbeiten wir eng zusammen."
-        image={{ src: '/images/kooperation.png', alt: 'Hände, die gemeinsam etwas halten – Symbol für Zusammenarbeit' }}
       />
 
       <Section>
