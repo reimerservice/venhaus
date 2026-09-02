@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { Section } from '@/components/page-hero'
 import { contact } from '@/lib/site-data'
+import { initiativeMailHref, jobPostings } from '@/lib/jobs'
 
 export function JobsAndContact() {
   return (
@@ -18,12 +19,22 @@ export function JobsAndContact() {
               auch per Mail. Wir geben jeder Bewerbung eine kurze Rückmeldung.
             </p>
           </div>
-          <Link
-            href="/kontakt"
-            className="inline-flex w-fit items-center justify-center rounded-full bg-accent px-6 py-3 font-bold text-accent-foreground transition-colors hover:bg-accent/90"
-          >
-            Jetzt bewerben
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/stellenangebote"
+              className="inline-flex w-fit items-center justify-center rounded-full bg-accent px-6 py-3 font-bold text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              {jobPostings.length > 0
+                ? `${jobPostings.length} offene ${jobPostings.length === 1 ? 'Stelle' : 'Stellen'} ansehen`
+                : 'Zu den Stellenangeboten'}
+            </Link>
+            <a
+              href={initiativeMailHref}
+              className="inline-flex w-fit items-center justify-center rounded-full border border-primary-foreground/30 px-6 py-3 font-bold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+            >
+              Initiativ bewerben
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col gap-6 overflow-hidden rounded-4xl bg-card ring-1 ring-border">

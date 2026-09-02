@@ -29,6 +29,7 @@ export const navigation: NavGroup[] = [
       { label: 'Anmeldung', href: '/anmeldung', description: 'Anmeldung, Eingewöhnung & Packliste' },
       { label: 'Auszeichnungen', href: '/auszeichnungen', description: 'Zertifikate und Projekte' },
       { label: 'Zusammenarbeit', href: '/zusammenarbeit', description: 'Eltern, Elternbeirat, Grundschule' },
+      { label: 'Stellenangebote', href: '/stellenangebote', description: 'Ausschreibungen & Initiativbewerbung' },
     ],
   },
   {
