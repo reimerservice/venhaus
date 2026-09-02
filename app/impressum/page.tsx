@@ -197,7 +197,7 @@ export default function ImpressumPage() {
         <AddressBlock>
           Reimer Elektrotechnik
           <br />
-          Brahmsstraße 5
+          Adam-Opel-Straße 10
           <br />
           48480 Spelle
         </AddressBlock>
