@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Heart, Users } from 'lucide-react'
+import { Parallax } from '@/components/parallax'
 
 export function Hero() {
   return (
@@ -54,7 +55,7 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2.5rem]">
+          <Parallax amount={18} scale={1.15} className="aspect-[4/3] w-full rounded-[2.5rem]">
             <Image
               src="/images/luft-1.jpg"
               alt="Luftaufnahme der Kita St. Vitus Venhaus mit roten Ziegeldächern, Sonnensegeln und Spielplatz"
@@ -63,7 +64,7 @@ export function Hero() {
               sizes="(min-width: 1024px) 55vw, 100vw"
               className="object-cover"
             />
-          </div>
+          </Parallax>
           <div className="absolute -bottom-6 -left-4 hidden w-48 rotate-[-4deg] overflow-hidden rounded-3xl border-4 border-background shadow-xl shadow-foreground/10 sm:block lg:-left-10 lg:w-60">
             <Image
               src="/images/raeume/spielplatz-kindergarten.jpg"

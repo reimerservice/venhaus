@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Gallery } from '@/components/gallery'
+import { ImageBreak } from '@/components/image-break'
 import { AnchorNav, PageHero, Prose, Section, SectionHeading } from '@/components/page-hero'
 import { Reveal } from '@/components/reveal'
 import { groupGalleries, houseGallery } from '@/lib/site-data'
@@ -51,6 +52,12 @@ export default function RaumangebotPage() {
           <Gallery images={houseGallery} featured />
         </Reveal>
       </Section>
+
+      <ImageBreak
+        src="/images/raeume/spielplatz-kindergarten.jpg"
+        alt="Der große Kindergarten-Spielplatz mit Klettergerüst, Sandkasten und Sonnensegeln"
+        caption="Täglich mindestens einmal an die frische Luft – wann immer das Wetter es zulässt."
+      />
 
       {groupGalleries.map((g, i) => {
         const isKrippe = g.title === 'Das Spatzennest'

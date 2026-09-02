@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/reveal'
+import { Parallax } from '@/components/parallax'
 
 type PageHeroProps = {
   eyebrow: string
@@ -30,16 +31,18 @@ export function PageHero({ eyebrow, title, intro, image, children }: PageHeroPro
           {children}
         </Reveal>
         {image && (
-          <Reveal delay={120} className="relative aspect-[4/3] w-full overflow-hidden rounded-[2.5rem_2.5rem_2.5rem_0.75rem] lg:aspect-[5/4]">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-              style={image.position ? { objectPosition: image.position } : undefined}
-              priority
-            />
+          <Reveal delay={120}>
+            <Parallax amount={10} scale={1.1} className="aspect-[4/3] w-full rounded-[2.5rem_2.5rem_2.5rem_0.75rem] lg:aspect-[5/4]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+                style={image.position ? { objectPosition: image.position } : undefined}
+                priority
+              />
+            </Parallax>
           </Reveal>
         )}
       </div>
