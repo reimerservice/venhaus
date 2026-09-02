@@ -62,26 +62,23 @@ export default function ImpressumPage() {
         <AddressBlock>
           {contact.traeger}
           <br />
-          <Pruefen>Postanschrift des Pfarrbüros (Straße, PLZ, Ort)</Pruefen>
+          Pfarrbüro der Pfarreiengemeinschaft Spelle
           <br />
-          Telefon: <Pruefen>Telefonnummer des Pfarrbüros</Pruefen>
+          Kirchstraße 5, 48480 Spelle
           <br />
-          E-Mail: <Pruefen>E-Mail-Adresse des Pfarrbüros</Pruefen>
+          Telefon: <a href="tel:+49597793940">05977 93940</a>
+          <br />
+          E-Mail: <a href="mailto:pfarrbuero-spelle@bistum-os.de">pfarrbuero-spelle@bistum-os.de</a>
         </AddressBlock>
-        <p>
-          Die Kirchengemeinde gehört zur Pfarreiengemeinschaft <Pruefen>Name der Pfarreiengemeinschaft</Pruefen> im
-          Bistum Osnabrück.
-        </p>
+        <p>Die Kirchengemeinde gehört zur Pfarreiengemeinschaft Spelle im Bistum Osnabrück.</p>
       </LegalSection>
 
       <LegalSection id="vertretung" title="Vertretungsberechtigte">
         <p>Die Kirchengemeinde wird gesetzlich vertreten durch den Kirchenvorstand, dieser durch:</p>
         <ul>
+          <li>Ludger Pöttering, Pfarrer (Vorsitzender des Kirchenvorstands)</li>
           <li>
-            <Pruefen>Name, Funktion (z. B. Pfarrer / Vorsitzender des Kirchenvorstands)</Pruefen>
-          </li>
-          <li>
-            <Pruefen>Name, Funktion (z. B. stellv. Vorsitzende:r des Kirchenvorstands)</Pruefen>
+            <Pruefen>stellv. Vorsitzende:r des Kirchenvorstands – Name ergänzen</Pruefen>
           </li>
         </ul>
       </LegalSection>

@@ -65,7 +65,13 @@ export default function DatenschutzPage() {
           <br />
           als Trägerin der {contact.name}
           <br />
-          <Pruefen>Postanschrift der Kirchengemeinde / des Pfarrbüros</Pruefen>
+          Pfarrbüro der Pfarreiengemeinschaft Spelle
+          <br />
+          Kirchstraße 5, 48480 Spelle
+          <br />
+          Telefon: <a href="tel:+49597793940">05977 93940</a>
+          <br />
+          E-Mail: <a href="mailto:pfarrbuero-spelle@bistum-os.de">pfarrbuero-spelle@bistum-os.de</a>
           <br />
           vertreten durch: Ludger Pöttering (Pfarrer) und Dominik Witte (Pastoraler Koordinator)
         </AddressBlock>
