@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const toc = [
   { id: 'ueberblick', label: 'Überblick' },
   { id: 'verantwortlicher', label: 'Verantwortlicher' },
-  { id: 'datenschutzbeauftragter', label: 'Datenschutzbeauftragte:r' },
+  { id: 'datenschutzbeauftragter', label: 'Datenschutzbeauftragter' },
   { id: 'rechtsgrundlagen', label: 'Rechtsgrundlagen' },
   { id: 'hosting', label: 'Hosting bei Vercel' },
   { id: 'logfiles', label: 'Server-Logfiles' },
@@ -67,7 +67,7 @@ export default function DatenschutzPage() {
           <br />
           <Pruefen>Postanschrift der Kirchengemeinde / des Pfarrbüros</Pruefen>
           <br />
-          vertreten durch: <Pruefen>Name und Funktion der Trägervertretung</Pruefen>
+          vertreten durch: Ludger Pöttering (Pfarrer) und Dominik Witte (Pastoraler Koordinator)
         </AddressBlock>
         <p>Ansprechpartnerin vor Ort:</p>
         <AddressBlock>
@@ -84,19 +84,22 @@ export default function DatenschutzPage() {
         <p>
           <strong>Hinweis zum anwendbaren Recht:</strong> Als Einrichtung in katholischer Trägerschaft gilt für uns das{' '}
           <em>Gesetz über den Kirchlichen Datenschutz (KDG)</em>, das inhaltlich der DSGVO entspricht. Wo in dieser
-          Erklärung auf Artikel der DSGVO verwiesen wird, gelten die entsprechenden Paragrafen des KDG.{' '}
-          <Pruefen>Anwendbarkeit des KDG durch den Träger bestätigen lassen</Pruefen>
+          Erklärung auf Artikel der DSGVO verwiesen wird, gelten die entsprechenden Paragrafen des KDG.
         </p>
       </LegalSection>
 
-      <LegalSection id="datenschutzbeauftragter" title="Datenschutzbeauftragte:r">
-        <p>Sie erreichen unsere betriebliche Datenschutzbeauftragte bzw. unseren Datenschutzbeauftragten unter:</p>
+      <LegalSection id="datenschutzbeauftragter" title="Datenschutzbeauftragter">
+        <p>Sie erreichen den Datenschutzbeauftragten des Bistums Osnabrück unter:</p>
         <AddressBlock>
-          <Pruefen>Name der/des Datenschutzbeauftragten des Trägers bzw. des Bistums Osnabrück</Pruefen>
+          <strong>Herr Philipp Wachhorst</strong>
           <br />
-          <Pruefen>Anschrift</Pruefen>
+          pco GmbH &amp; Co. KG
           <br />
-          E-Mail: <Pruefen>E-Mail-Adresse</Pruefen>
+          Hafenstraße 11
+          <br />
+          49090 Osnabrück
+          <br />
+          E-Mail: <a href="mailto:datenschutz@bistum-osnabrueck.de">datenschutz@bistum-osnabrueck.de</a>
         </AddressBlock>
       </LegalSection>
 
@@ -341,24 +344,14 @@ export default function DatenschutzPage() {
           Bistum Osnabrück ist zuständig:
         </p>
         <AddressBlock>
-          <strong>Katholisches Datenschutzzentrum (KdöR)</strong>
+          <strong>Diözesandatenschutzbeauftragte</strong>
           <br />
-          Brackeler Hellweg 144
+          der (Erz-)Bistümer Hamburg, Hildesheim, Osnabrück und des Bischöflich Münsterschen Offizialats in Vechta i. O.
           <br />
-          44309 Dortmund
+          Unser Lieben Frauen Kirchhof 20
           <br />
-          Telefon: 0231 138985-0
-          <br />
-          E-Mail: <a href="mailto:info@kdsz.de">info@kdsz.de</a>
-          <br />
-          <a href="https://www.katholisches-datenschutzzentrum.de" target="_blank" rel="noopener noreferrer">
-            www.katholisches-datenschutzzentrum.de
-          </a>
+          28195 Bremen
         </AddressBlock>
-        <p>
-          <Pruefen>Zuständigkeit und Kontaktdaten der kirchlichen Aufsicht bestätigen. Falls das KDG nicht anwendbar ist:
-          Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover</Pruefen>
-        </p>
       </LegalSection>
 
       <LegalSection id="sicherheit" title="Datensicherheit">
