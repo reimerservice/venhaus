@@ -93,18 +93,24 @@ export default function TraegerPage() {
               </Prose>
             </Reveal>
 
-            <Reveal className="mt-10 flex flex-col gap-3">
+            <Reveal className="mt-10 flex flex-col gap-4">
               <Image
                 src="/images/traeger.png"
-                alt="Fotos und Unterschriften der Vertreter des Trägers"
+                alt="Fotos und Unterschriften von Ludger Pöttering und Dominik Witte"
                 width={800}
                 height={430}
                 className="h-auto w-full max-w-md rounded-2xl bg-card p-4 ring-1 ring-border"
               />
-              <p className="text-sm font-semibold text-destructive">
-                [[ZU PRÜFEN: Namen und Funktionen der beiden abgebildeten Trägervertreter – auf der Original-Website nicht
-                als Text hinterlegt]]
-              </p>
+              <dl className="flex flex-wrap gap-x-12 gap-y-3">
+                <div className="flex flex-col">
+                  <dt className="font-semibold text-foreground">Ludger Pöttering</dt>
+                  <dd className="text-sm text-muted-foreground">Pfarrer</dd>
+                </div>
+                <div className="flex flex-col">
+                  <dt className="font-semibold text-foreground">Dominik Witte</dt>
+                  <dd className="text-sm text-muted-foreground">Pastoraler Koordinator</dd>
+                </div>
+              </dl>
             </Reveal>
           </div>
         </div>
