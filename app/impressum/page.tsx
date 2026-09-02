@@ -192,7 +192,7 @@ export default function ImpressumPage() {
 
       <LegalSection id="realisation" title="Technische Realisation und Gestaltung">
         <AddressBlock>
-          Reimer Elektrotechnik
+          Andreas Reimer Elektrotechnik
           <br />
           Adam-Opel-Straße 10
           <br />
