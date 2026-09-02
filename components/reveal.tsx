@@ -45,7 +45,6 @@ export function Reveal({ children, className, delay = 0, as: Tag = 'div', id }: 
 
   return (
     <Tag
-      // @ts-expect-error – generischer Ref auf ein polymorphes Element
       ref={ref}
       id={id}
       className={cn('reveal', className)}
