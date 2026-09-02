@@ -1,88 +1,211 @@
 import type { Metadata } from 'next'
-import { PageHero, Prose, Section } from '@/components/page-hero'
+import { AddressBlock, LegalPage, LegalSection, Pruefen } from '@/components/legal/legal-page'
 import { contact } from '@/lib/site-data'
 
-export const metadata: Metadata = { title: 'Impressum' }
+export const metadata: Metadata = {
+  title: 'Impressum',
+  description: 'Anbieterkennzeichnung der Kindertagesstätte St. Vitus Venhaus.',
+}
+
+const toc = [
+  { id: 'anbieter', label: 'Anbieter' },
+  { id: 'traeger', label: 'Träger' },
+  { id: 'vertretung', label: 'Vertretungsberechtigte' },
+  { id: 'aufsicht', label: 'Aufsichtsbehörde' },
+  { id: 'verantwortlich', label: 'Inhaltlich Verantwortliche' },
+  { id: 'streitschlichtung', label: 'Streitschlichtung' },
+  { id: 'haftung-inhalte', label: 'Haftung für Inhalte' },
+  { id: 'haftung-links', label: 'Haftung für Links' },
+  { id: 'urheberrecht', label: 'Urheberrecht' },
+  { id: 'bildnachweise', label: 'Bildnachweise' },
+  { id: 'realisation', label: 'Technische Realisation' },
+]
 
 export default function ImpressumPage() {
   return (
-    <>
-      <PageHero eyebrow="Rechtliches" title="Impressum" />
-      <Section>
-        <Prose>
-          <p>
-            <strong>{contact.name}</strong>
-            <br />
-            Leitung Fachwirtin {contact.leitung}
-            <br />
-            {contact.street}
-            <br />
-            {contact.city}
-            <br />
-            Tel. {contact.phone}
-            <br />
+    <LegalPage
+      eyebrow="Rechtliches"
+      title="Impressum"
+      intro="Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) und § 18 Abs. 2 MStV (Medienstaatsvertrag)."
+      toc={toc}
+    >
+      <LegalSection id="anbieter" title="Anbieter">
+        <AddressBlock>
+          <strong>{contact.name}</strong>
+          <br />
+          {contact.street}
+          <br />
+          {contact.city}
+        </AddressBlock>
+        <dl>
+          <dt>Telefon</dt>
+          <dd>
+            <a href={contact.phoneHref}>{contact.phone}</a>
+          </dd>
+          <dt>E-Mail</dt>
+          <dd>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <br />
-            {contact.web}
-          </p>
-          <p>Träger ist die {contact.traeger}.</p>
+          </dd>
+          <dt>Internet</dt>
+          <dd>{contact.web}</dd>
+        </dl>
+        <p>
+          Kitaleitung: {contact.leitung}, Fachwirtin für Kindertageseinrichtungen
+        </p>
+      </LegalSection>
 
-          <h2>Haftungsausschluss</h2>
-          <h3>Inhalt der Webseite</h3>
-          <p>
-            Der Autor nimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der
-            bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder
-            ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die
-            Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen,
-            sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle
-            Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder
-            das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung
-            zeitweise oder endgültig einzustellen.
-          </p>
-          <h3>Verweise und Links</h3>
-          <p>
-            Bei direkten oder indirekten Verweisen auf fremde Internetseiten („Links“), die außerhalb des
-            Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft
-            treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die
-            Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt daher ausdrücklich, dass zum Zeitpunkt
-            der Linksetzung die entsprechenden verlinkten Seiten frei von illegalen Inhalten waren. Der Autor hat keinerlei
-            Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der gelinkten/verknüpften Seiten.
-            Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller gelinkten/verknüpften Seiten, die nach
-            der Linksetzung verändert wurden. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für
-            Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein
-            der Anbieter der Seite, auf welche verwiesen wurde.
-          </p>
-          <h3>Urheber- und Kennzeichenrecht</h3>
-          <p>
-            Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, Tondokumente,
-            Videosequenzen und Texte zu beachten. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte
-            geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen
-            Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Copyright für
-            veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung
-            oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder
-            gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
-          </p>
-          <h3>Rechtswirksamkeit dieses Haftungsausschlusses</h3>
-          <p>
-            Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von wo aus auf diese Seite
-            verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht
-            mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und
-            ihrer Gültigkeit davon unberührt.
-          </p>
+      <LegalSection id="traeger" title="Träger der Einrichtung">
+        <p>
+          Die Kindertagesstätte St. Vitus Venhaus ist eine Einrichtung in Trägerschaft der{' '}
+          <strong>{contact.traeger}</strong>, einer Körperschaft des öffentlichen Rechts.
+        </p>
+        <AddressBlock>
+          {contact.traeger}
+          <br />
+          <Pruefen>Postanschrift des Pfarrbüros (Straße, PLZ, Ort)</Pruefen>
+          <br />
+          Telefon: <Pruefen>Telefonnummer des Pfarrbüros</Pruefen>
+          <br />
+          E-Mail: <Pruefen>E-Mail-Adresse des Pfarrbüros</Pruefen>
+        </AddressBlock>
+        <p>
+          Die Kirchengemeinde gehört zur Pfarreiengemeinschaft <Pruefen>Name der Pfarreiengemeinschaft</Pruefen> im
+          Bistum Osnabrück.
+        </p>
+      </LegalSection>
 
-          <h2>Technische Realisation und Gestaltung</h2>
-          <p>
-            Reimer Elektrotechnik
-            <br />
-            Brahmsstraße 5
-            <br />
-            48480 Spelle
-          </p>
+      <LegalSection id="vertretung" title="Vertretungsberechtigte">
+        <p>Die Kirchengemeinde wird gesetzlich vertreten durch den Kirchenvorstand, dieser durch:</p>
+        <ul>
+          <li>
+            <Pruefen>Name, Funktion (z. B. Pfarrer / Vorsitzender des Kirchenvorstands)</Pruefen>
+          </li>
+          <li>
+            <Pruefen>Name, Funktion (z. B. stellv. Vorsitzende:r des Kirchenvorstands)</Pruefen>
+          </li>
+        </ul>
+      </LegalSection>
 
-          <h2>Fotonachweise</h2>
-          <p>© Pixabay · © Keira Burton · © Sofielafée Studio · © Vanessa Loring · © Andreas Reimer</p>
-        </Prose>
-      </Section>
-    </>
+      <LegalSection id="aufsicht" title="Zuständige Aufsichtsbehörde">
+        <p>
+          Kirchenaufsicht: Bischöfliches Generalvikariat Osnabrück, Domhof 2, 49074 Osnabrück
+          <br />
+          <Pruefen>Angabe bestätigen</Pruefen>
+        </p>
+        <p>
+          Betriebserlaubnis nach § 45 SGB VIII: Niedersächsisches Landesamt für Soziales, Jugend und Familie,
+          Landesjugendamt <Pruefen>Standort/Außenstelle und Anschrift ergänzen</Pruefen>
+        </p>
+        <p>
+          Umsatzsteuer-Identifikationsnummer: <Pruefen>falls vorhanden, sonst diesen Absatz entfernen</Pruefen>
+        </p>
+      </LegalSection>
+
+      <LegalSection id="verantwortlich" title="Verantwortlich für den Inhalt">
+        <p>Verantwortlich im Sinne des § 18 Abs. 2 MStV:</p>
+        <AddressBlock>
+          {contact.leitung}
+          <br />
+          {contact.name}
+          <br />
+          {contact.street}, {contact.city}
+        </AddressBlock>
+        <p>
+          <Pruefen>Bestätigen, dass die Kitaleitung als inhaltlich Verantwortliche benannt werden soll – alternativ
+          Trägervertretung eintragen</Pruefen>
+        </p>
+      </LegalSection>
+
+      <LegalSection id="streitschlichtung" title="Verbraucherstreitbeilegung">
+        <p>
+          Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="haftung-inhalte" title="Haftung für Inhalte">
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen
+          Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+          übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine
+          rechtswidrige Tätigkeit hinweisen.
+        </p>
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
+          hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+          Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte
+          umgehend entfernen.
+        </p>
+        <p>
+          Alle Inhalte wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
+          Inhalte können wir jedoch keine Gewähr übernehmen. Insbesondere Öffnungszeiten, Ferienregelungen und
+          Aufnahmekriterien können sich ändern – maßgeblich sind die Auskünfte der Einrichtung.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="haftung-links" title="Haftung für Links">
+        <p>
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb
+          können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist
+          stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum
+          Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+          Verlinkung nicht erkennbar.
+        </p>
+        <p>
+          Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
+          Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+          entfernen.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="urheberrecht" title="Urheberrecht">
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+          Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
+          des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und
+          Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+        </p>
+        <p>
+          Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter
+          beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
+          Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
+          Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+        </p>
+        <p>
+          Fotos, auf denen Kinder oder Mitarbeitende zu erkennen sind, werden nur mit Einwilligung der Betroffenen bzw.
+          ihrer Erziehungsberechtigten veröffentlicht. Eine Weiterverwendung dieser Aufnahmen ist ausdrücklich untersagt.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="bildnachweise" title="Bildnachweise">
+        <p>Die auf dieser Website verwendeten Fotos und Grafiken stammen aus folgenden Quellen:</p>
+        <ul>
+          <li>Luftaufnahmen, Räume, Außengelände und Teamfotos: {contact.name} / Andreas Reimer</li>
+          <li>Symbolbilder auf der Seite „Ein Tag bei uns“: Pixabay (lizenzfrei)</li>
+          <li>Symbolbild auf der Seite „Anmeldung“: Daiga Ellaby via Unsplash (Unsplash-Lizenz)</li>
+          <li>Kinderzahnpflege-Illustration: <Pruefen>Quelle des Zahnarzt-Bildes</Pruefen></li>
+          <li>Logo „Haus für Kinder und Familien“: Bistum Osnabrück</li>
+          <li>Logo „Brückenjahr“: <Pruefen>Rechteinhaber des Brückenjahr-Logos</Pruefen></li>
+          <li>
+            Weitere Fotografinnen laut bisheriger Website: Keira Burton, Sofielafée Studio, Vanessa Loring{' '}
+            <Pruefen>Zuordnung zu konkreten Bildern prüfen; nicht mehr verwendete Nachweise entfernen</Pruefen>
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection id="realisation" title="Technische Realisation und Gestaltung">
+        <AddressBlock>
+          Reimer Elektrotechnik
+          <br />
+          Brahmsstraße 5
+          <br />
+          48480 Spelle
+        </AddressBlock>
+        <p>
+          Die Website wird über die Plattform Vercel bereitgestellt. Details zur Datenverarbeitung finden Sie in unserer{' '}
+          <a href="/datenschutz">Datenschutzerklärung</a>.
+        </p>
+      </LegalSection>
+    </LegalPage>
   )
 }

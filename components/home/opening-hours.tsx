@@ -9,7 +9,7 @@ export function OpeningHours() {
         <SectionHeading
           eyebrow="Öffnungszeiten"
           title="Verlässliche Zeiten für den Familienalltag"
-          intro="Unsere Kernzeiten können Sie flexibel um Früh- und Spätdienste ergänzen – buchbar in halben Stunden."
+          intro="Kernöffnungszeiten für Regel- und Ganztagsgruppe sowie halbstündlich buchbare Randzeiten."
         />
         <div className="grid gap-4 sm:grid-cols-2">
           {openingHours.map((h) => (

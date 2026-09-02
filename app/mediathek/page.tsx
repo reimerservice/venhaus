@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Download, ExternalLink, FileText } from 'lucide-react'
-import { PageHero, Section, SectionHeading } from '@/components/page-hero'
+import { ExternalLink } from 'lucide-react'
+import { AnchorNav, PageHero, Section, SectionHeading } from '@/components/page-hero'
+import { FileList } from '@/components/file-list'
 import { VideoCard } from '@/components/video-card'
+import { Reveal } from '@/components/reveal'
 import { documents, videos, youtubeChannel } from '@/lib/site-data'
 
 export const metadata: Metadata = {
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function MediathekPage() {
-  const [konzeption, ...rest] = documents
+  const [konzeption] = documents
 
   return (
     <>
@@ -19,55 +21,51 @@ export default function MediathekPage() {
         eyebrow="Mediathek"
         title="Zum Lesen, Ansehen und Herunterladen"
         intro="Unsere Konzeption, das Kita- und Krippen-ABC, das Leitbild sowie Videos aus unserer Kita."
-      />
+        image={{ src: '/images/raeume/halle-2.jpg', alt: 'Blick in die Halle der Kita' }}
+      >
+        <AnchorNav
+          items={[
+            { href: '#dokumente', label: 'Dokumente' },
+            { href: '#videos', label: 'Videos' },
+          ]}
+        />
+      </PageHero>
 
-      <Section>
-        <a
-          href={konzeption.href}
-          className="grid overflow-hidden rounded-4xl bg-card ring-1 ring-border transition-colors hover:ring-primary lg:grid-cols-[0.8fr_1.2fr]"
-        >
-          <div className="relative aspect-[4/3] bg-secondary lg:aspect-auto">
-            {konzeption.image && (
-              <Image src={konzeption.image} alt="Titelseite der Konzeption" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover object-top" />
-            )}
+      {/* Dokumente */}
+      <Section id="dokumente">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <Reveal className="flex flex-col gap-5 lg:sticky lg:top-28">
+            <SectionHeading eyebrow="Grundlage unserer Arbeit" title={konzeption.title} className="mb-0" />
+            <a
+              href={konzeption.href}
+              download
+              className="group relative block aspect-[3/4] max-w-xs overflow-hidden rounded-[2rem_2rem_2rem_0.75rem] bg-secondary ring-1 ring-border"
+            >
+              {konzeption.image && (
+                <Image
+                  src={konzeption.image}
+                  alt="Titelseite der Konzeption"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 80vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              )}
+              <span className="absolute inset-x-4 bottom-4 rounded-full bg-background/90 px-4 py-2 text-center text-sm font-bold text-foreground backdrop-blur">
+                Konzeption herunterladen (PDF)
+              </span>
+            </a>
+            <p className="max-w-sm leading-relaxed text-foreground/85">{konzeption.description}</p>
+          </Reveal>
+
+          <div className="flex flex-col gap-6">
+            <SectionHeading eyebrow="Downloads" title="Alle Dokumente" className="mb-0" />
+            <FileList files={documents} />
           </div>
-          <div className="flex flex-col justify-center gap-4 p-8 lg:p-12">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Grundlage unserer Arbeit</p>
-            <h2 className="text-3xl font-semibold">{konzeption.title}</h2>
-            <p className="leading-relaxed text-foreground/85">{konzeption.description}</p>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground">
-              <Download className="size-4" aria-hidden /> Konzeption herunterladen (PDF)
-            </span>
-          </div>
-        </a>
+        </div>
       </Section>
 
-      <Section tone="tinted">
-        <SectionHeading eyebrow="Dokumente" title="Broschüren und Downloads" />
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((d) => (
-            <li key={d.href}>
-              <a
-                href={d.href}
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-primary"
-              >
-                <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-secondary text-primary">
-                  <FileText className="size-5" aria-hidden />
-                </span>
-                <div className="flex flex-1 flex-col gap-1">
-                  <h3 className="text-lg font-semibold">{d.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{d.description}</p>
-                </div>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  <Download className="size-4" aria-hidden /> PDF herunterladen
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section>
+      {/* Videos */}
+      <Section id="videos" tone="tinted">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Videos"
@@ -84,12 +82,15 @@ export default function MediathekPage() {
           </a>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {videos.map((v) => (
-            <li key={v.id}>
+          {videos.map((v, i) => (
+            <Reveal key={v.id} as="li" delay={Math.min(i * 60, 240)}>
               <VideoCard {...v} />
-            </li>
+            </Reveal>
           ))}
         </ul>
+        <p className="mt-8 text-sm text-muted-foreground">
+          Die Videos werden erst nach einem Klick von YouTube geladen (Zwei-Klick-Lösung, Datenschutz-Modus).
+        </p>
       </Section>
     </>
   )

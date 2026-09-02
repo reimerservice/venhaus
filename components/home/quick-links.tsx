@@ -6,7 +6,7 @@ const links = [
   { href: '/anmeldung', icon: ClipboardList, title: 'Anmeldung', text: 'Alles zur Anmeldung, Eingewöhnung und Aufnahmekriterien.' },
   { href: '/tagesablauf', icon: Sun, title: 'Ein Tag bei uns', text: 'So sieht ein Tag in Krippe und Kindergarten aus.' },
   { href: '/team', icon: Users, title: 'Unser Team', text: 'Die Menschen, die Ihr Kind jeden Tag begleiten.' },
-  { href: '/angebote', icon: Sparkles, title: 'Besondere Angebote', text: 'Strolche, Schukis, Kidsclub, Waldwochen und mehr.' },
+  { href: '/angebote', icon: Sparkles, title: 'Besondere Angebote', text: 'Strolche, Schukis, Kidsclub, Märchenstunde und gruppenübergreifendes Spiel.' },
   { href: '/feste', icon: CalendarDays, title: 'Feste und Feiern', text: 'Das Kita-Jahr im Rhythmus des Kirchenjahres.' },
   { href: '/mediathek', icon: BookOpen, title: 'Mediathek', text: 'Konzeption, Kita-ABC und Videos zum Herunterladen.' },
 ]

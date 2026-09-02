@@ -29,6 +29,7 @@ export const navigation: NavGroup[] = [
       { label: 'Anmeldung', href: '/anmeldung', description: 'Anmeldung, Eingewöhnung & Packliste' },
       { label: 'Auszeichnungen', href: '/auszeichnungen', description: 'Zertifikate und Projekte' },
       { label: 'Zusammenarbeit', href: '/zusammenarbeit', description: 'Eltern, Elternbeirat, Grundschule' },
+      { label: 'Stellenangebote', href: '/stellenangebote', description: 'Ausschreibungen & Initiativbewerbung' },
     ],
   },
   {
@@ -65,34 +66,36 @@ export type Group = {
   tagline: string
 }
 
+// Gruppennamen und Zuordnung Krippe/Kindergarten stammen von der Original-Website
+// (Team- und Raumangebot-Seite). Die Kurzbeschreibungen sind bewusst rein beschreibend gehalten.
 export const groups: Group[] = [
   {
     slug: 'spatzennest',
     name: 'Das Spatzennest',
     kind: 'Krippe',
     image: '/images/raeume/spatzennest-1.jpg',
-    tagline: 'Unsere Krippengruppe für die Jüngsten',
+    tagline: 'Krippengruppe',
   },
   {
     slug: 'elefantengruppe',
     name: 'Die Elefantengruppe',
     kind: 'Kindergarten',
     image: '/images/raeume/elefanten-1.jpg',
-    tagline: 'Gemeinsam groß werden',
+    tagline: 'Kindergartengruppe',
   },
   {
     slug: 'baerengruppe',
     name: 'Die Bärengruppe',
     kind: 'Kindergarten',
     image: '/images/raeume/baeren-1.jpg',
-    tagline: 'Spielen, bauen, entdecken',
+    tagline: 'Kindergartengruppe',
   },
   {
     slug: 'loewengruppe',
     name: 'Die Löwengruppe',
     kind: 'Kindergarten',
     image: '/images/raeume/loewen-1.jpg',
-    tagline: 'Mutig die Welt erkunden',
+    tagline: 'Kindergartengruppe',
   },
 ]
 
@@ -237,7 +240,7 @@ export const groupGalleries: { title: string; images: GalleryImage[] }[] = [
     title: 'Die Elefantengruppe',
     images: [
       { src: '/images/raeume/elefanten-1.jpg', caption: 'Das ist der Gruppenraum der Elefanten.' },
-      { src: '/images/raeume/elefanten-2.jpg', caption: 'Unsere Elefantengruppe.' },
+      { src: '/images/raeume/elefanten-2.jpg', caption: '[[ZU PRÜFEN: Bildunterschrift – im Original ohne Text]]' },
       { src: '/images/raeume/elefanten-3.jpg', caption: 'Milch, Wasser oder ein Kakao? Unser Esstisch in der Elefantengruppe.' },
       { src: '/images/raeume/elefanten-4.jpg', caption: 'Jede Gruppe hat einen eigenen Waschraum. Hier werden die Elefantenkinder sauber!' },
     ],
@@ -271,22 +274,27 @@ export const documents = [
     href: '/docs/leitbild.pdf',
   },
   {
-    title: 'Aufnahmekriterien',
-    description: 'Die aktuellen Aufnahmekriterien für das kommende Kita-Jahr als PDF.',
+    title: 'Aufnahmekriterien 2025/2026',
+    description:
+      'Die Aufnahmekriterien als PDF (Stand laut Original-Website: Kita-Jahr 2025/2026). [[ZU PRÜFEN: Gibt es eine aktuellere Fassung?]]',
     href: '/docs/aufnahmekriterien.pdf',
   },
   {
     title: 'Ferienplanung 2026',
-    description: 'Alle Schließtage und Ferienzeiten des laufenden Jahres auf einen Blick.',
+    description: 'Die Ferienplanung der Kita Venhaus für das Jahr 2026 als PDF.',
     href: '/docs/ferienplanung-2026.pdf',
   },
 ]
 
+// Reihenfolge, Titel und Video-IDs entsprechen exakt dem Karussell auf der Original-Mediathek.
 export const videos = [
-  { id: 'Uz3WgMVg6Vs', title: 'Die Martinslegende', thumb: '/images/mediathek/martinslegende.png' },
-  { id: 'FdYNO3OSagg', title: 'Palmsonntag', thumb: '/images/mediathek/palmsonntag.png' },
-  { id: '6lwAGCnP_og', title: 'Gründonnerstag', thumb: '/images/mediathek/gruendonnerstag.png' },
-  { id: 'Vnjnj1VQ3LM', title: 'Karfreitag', thumb: '/images/mediathek/karfreitag.png' },
+  { id: 'Uz3WgMVg6Vs', title: 'Martinslegende', thumb: '/images/mediathek/martinslegende.png' },
+  { id: 'MxH0w5nyZHw', title: 'Palmsonntag', thumb: '/images/mediathek/palmsonntag.png' },
+  { id: 'Z1oEZ25ZfWQ', title: 'Gründonnerstag', thumb: '/images/mediathek/gruendonnerstag.png' },
+  { id: 'FdYNO3OSagg', title: 'Karfreitag', thumb: '/images/mediathek/karfreitag.png' },
+  { id: '6lwAGCnP_og', title: 'Ostern', thumb: '/images/mediathek/ostern.png' },
+  { id: 'Vnjnj1VQ3LM', title: 'Emmaus', thumb: '/images/mediathek/emmaus.png' },
+  { id: '2vceFdVS94Y', title: 'Pfingsten', thumb: '/images/mediathek/pfingsten.png' },
 ]
 
 export const youtubeChannel = 'https://www.youtube.com/channel/UC_GGzQcyafYQE1DjLBNYcsg'
