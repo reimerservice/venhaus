@@ -48,14 +48,13 @@ export const defaultJobContact: JobPosting['contactPerson'] = {
  * plus den Abschnitt für Initiativbewerbungen.
  *
  * Inhalte 1:1 aus den Stellen-Flyern der Kita übernommen (Stand: Flyer vom Träger).
- * Ein Eintrittstermin steht in den Flyern nicht – daher als Platzhalter markiert.
  */
 export const jobPostings: JobPosting[] = [
   {
     id: 'heilpaedagogische-fachkraft',
     title: 'Heilpädagogische Fachkraft (m/w/d)',
     scope: 'Voll- und Teilzeit, unbefristet',
-    start: '[[ZU PRÜFEN: Eintrittstermin]]',
+    start: 'ab sofort',
     summary: 'Wir suchen dich! Fachkraft mit „Kopf, Herz & Hand“.',
     benefits: [
       'entsprechendes Entgelt (TVöD)',
@@ -76,7 +75,7 @@ export const jobPostings: JobPosting[] = [
     id: 'paedagogische-fachkraft-assistenzkraft',
     title: 'Pädagogische Fachkraft (m/w/d) oder Pädagogische Assistenzkraft (m/w/d)',
     scope: 'Voll- oder Teilzeit, unbefristet',
-    start: '[[ZU PRÜFEN: Eintrittstermin]]',
+    start: 'ab sofort',
     summary: 'Gemeinsam. Wertschätzend mit „Kopf, Herz & Hand“. Du möchtest Teil unseres Teams werden? Dann freuen wir uns auf deine Bewerbung!',
     benefits: [
       'entsprechendes Entgelt (TVöD)',
