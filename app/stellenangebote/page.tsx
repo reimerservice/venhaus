@@ -50,7 +50,7 @@ export default function StellenangebotePage() {
         />
 
         {hasJobs ? (
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="flex flex-col gap-8">
             {jobPostings.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}

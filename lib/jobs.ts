@@ -19,8 +19,12 @@ export type JobPosting = {
     phoneHref?: string
     email?: string
   }
+  /** Was die Kita bietet – optional, wird als Liste angezeigt. */
+  benefits?: string[]
   /** Optionaler Link zur vollständigen Ausschreibung als PDF, z. B. "/docs/stellen/erzieherin-2026.pdf". */
   pdf?: string
+  /** Optionaler Flyer als Bild (PNG/JPG) – wird in der Karte angezeigt und ist verlinkt. */
+  flyer?: { src: string; alt: string }
 }
 
 /**
@@ -43,20 +47,51 @@ export const defaultJobContact: JobPosting['contactPerson'] = {
  * Ist das Array leer, zeigt /stellenangebote automatisch den Hinweistext
  * plus den Abschnitt für Initiativbewerbungen.
  *
- * Die Original-Website enthält derzeit keine konkreten Ausschreibungen,
- * deshalb ist die Liste bewusst leer – es werden keine Stellen erfunden.
+ * Inhalte 1:1 aus den Stellen-Flyern der Kita übernommen (Stand: Flyer vom Träger).
+ * Ein Eintrittstermin steht in den Flyern nicht – daher als Platzhalter markiert.
  */
 export const jobPostings: JobPosting[] = [
-  // Beispiel (auskommentiert – zum Aktivieren die Kommentarzeichen entfernen):
-  // {
-  //   id: 'paedagogische-fachkraft-2026',
-  //   title: 'Pädagogische Fachkraft (m/w/d)',
-  //   scope: 'Teilzeit, 30 Std./Woche',
-  //   start: 'ab 01.08.2026',
-  //   summary: 'Für unsere Kindergartengruppen suchen wir Verstärkung.',
-  //   contactPerson: defaultJobContact,
-  //   pdf: '/docs/stellen/paedagogische-fachkraft-2026.pdf',
-  // },
+  {
+    id: 'heilpaedagogische-fachkraft',
+    title: 'Heilpädagogische Fachkraft (m/w/d)',
+    scope: 'Voll- und Teilzeit, unbefristet',
+    start: '[[ZU PRÜFEN: Eintrittstermin]]',
+    summary: 'Wir suchen dich! Fachkraft mit „Kopf, Herz & Hand“.',
+    benefits: [
+      'entsprechendes Entgelt (TVöD)',
+      'betriebliche Altersversorgung',
+      'Weiterbildungsmöglichkeiten',
+      'vielseitiger Arbeitsbereich',
+      'offenes & engagiertes Team',
+      'Gestaltungsspielraum eigener Ideen',
+      'Fahrradleasing',
+    ],
+    contactPerson: defaultJobContact,
+    flyer: {
+      src: '/docs/stellen/heilpaedagogische-fachkraft.png',
+      alt: 'Stellenausschreibung Heilpädagogische Fachkraft (m/w/d) – Kita St. Vitus Venhaus',
+    },
+  },
+  {
+    id: 'paedagogische-fachkraft-assistenzkraft',
+    title: 'Pädagogische Fachkraft (m/w/d) oder Pädagogische Assistenzkraft (m/w/d)',
+    scope: 'Voll- oder Teilzeit, unbefristet',
+    start: '[[ZU PRÜFEN: Eintrittstermin]]',
+    summary: 'Gemeinsam. Wertschätzend mit „Kopf, Herz & Hand“. Du möchtest Teil unseres Teams werden? Dann freuen wir uns auf deine Bewerbung!',
+    benefits: [
+      'entsprechendes Entgelt (TVöD)',
+      'betriebliche Altersversorgung',
+      'Weiterbildungsmöglichkeiten',
+      'wertschätzendes, offenes und engagiertes Team',
+      'Gestaltungsspielraum eigener Ideen',
+      'Fahrradleasing',
+    ],
+    contactPerson: defaultJobContact,
+    flyer: {
+      src: '/docs/stellen/paedagogische-fachkraft-assistenzkraft.png',
+      alt: 'Stellenausschreibung Pädagogische Fachkraft oder Pädagogische Assistenzkraft (m/w/d) – Kita St. Vitus Venhaus',
+    },
+  },
 ]
 
 /** Betreff für Initiativbewerbungen per E-Mail. */
