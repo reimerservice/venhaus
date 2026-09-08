@@ -16,14 +16,21 @@ type Step = { title: string; when: string; text: React.ReactNode }
 const steps: Step[] = [
   {
     title: 'Online anmelden',
-    when: 'Im Herbst',
+    when: 'Bis 31. Dezember',
     text: (
       <>
-        Die Anmeldung findet im Herbst statt. Sie läuft zentral für alle Einrichtungen der Samtgemeinde Spelle und
-        erfolgt online.{' '}
-        <span className="font-semibold text-destructive">
-          [[ZU PRÜFEN: Link zum Anmeldeportal der Samtgemeinde und genauer Anmeldezeitraum]]
-        </span>
+        Die Anmeldung läuft zentral für alle Einrichtungen der Samtgemeinde Spelle und erfolgt online über das{' '}
+        <a
+          href="https://kita-anmeldung.spelle.de/anmeldung.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          Kita-Anmeldeportal der Samtgemeinde
+        </a>
+        . Ein Kindergartenjahr beginnt am 1. August; Anmeldeschluss ist der 31. Dezember des Vorjahres. Auch danach
+        sind Anmeldungen möglich, werden bei der Platzvergabe aber nachrangig berücksichtigt. Für die Anmeldung
+        benötigen Sie eine gültige E-Mail-Adresse und melden jedes Kind einzeln an.
       </>
     ),
   },
@@ -81,7 +88,7 @@ export default function AnmeldungPage() {
       <PageHero
         eyebrow="Unsere Kita"
         title="Anmeldung und die ersten Tage"
-        intro="Von der Online-Anmeldung im Herbst bis zum ersten richtigen Kita-Tag: Hier finden Sie den Ablauf in fünf Schritten, die Aufnahmekriterien und die Packliste."
+        intro="Von der zentralen Online-Anmeldung bis zum ersten richtigen Kita-Tag: Hier finden Sie den Ablauf in fünf Schritten, die Aufnahmekriterien und die Packliste."
         image={{ src: '/images/anmeldung.jpg', alt: 'Kind mit Rucksack auf dem Weg in die Kita' }}
       >
         <AnchorNav items={[{ href: '#ablauf', label: 'Ablauf' }, { href: '#packliste', label: 'Packliste' }]} />
@@ -93,8 +100,16 @@ export default function AnmeldungPage() {
             <SectionHeading eyebrow="So läuft es ab" title="In fünf Schritten zu uns" className="mb-0" />
             <Reveal delay={100} className="flex flex-wrap gap-3">
               <a
-                href="/docs/aufnahmekriterien.pdf"
+                href="https://kita-anmeldung.spelle.de/anmeldung.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Jetzt online anmelden <ArrowRight className="size-4" aria-hidden />
+              </a>
+              <a
+                href="/docs/aufnahmekriterien.pdf"
+                className="inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-bold text-secondary-foreground transition-colors hover:bg-secondary/70"
               >
                 <FileText className="size-4" aria-hidden /> Aufnahmekriterien (PDF)
               </a>
