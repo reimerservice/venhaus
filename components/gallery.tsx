@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import type { GalleryImage } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
-import { ParallaxTile } from '@/components/parallax'
 
 export function Gallery({
   images,
@@ -87,8 +86,7 @@ export function Gallery({
           )
           return (
             <li key={img.src} className={cn(isLead && 'col-span-2 row-span-2')}>
-              {/* Kleine Kacheln bewegen sich minimal unterschiedlich schnell; das Leitbild steht ruhig. */}
-              {isLead ? tile : <ParallaxTile index={i} amount={14} className="h-full">{tile}</ParallaxTile>}
+              {tile}
             </li>
           )
         })}
