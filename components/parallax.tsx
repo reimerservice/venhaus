@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 /**
@@ -45,9 +45,11 @@ export function Parallax({
 
   // Fortschritt 0 → 1, während das Element durch den Viewport wandert
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  // Geglättet: Scroll-Sprünge werden weich interpoliert, statt hart pro Frame zu springen
+  const smooth = useSpring(scrollYProgress, { stiffness: 140, damping: 32, mass: 0.25 })
 
   const effective = reduce ? 0 : amount * factor
-  const y = useTransform(scrollYProgress, [0, 1], [`${-effective / 2}%`, `${effective / 2}%`])
+  const y = useTransform(smooth, [0, 1], [`${-effective / 2}%`, `${effective / 2}%`])
 
   return (
     <div ref={ref} className={cn('relative overflow-hidden', className)}>
